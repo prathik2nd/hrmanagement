@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="salary_list">
+      <field name="name">Salary list</field>
+      <field name="model">hrmanagement.salary</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="bsal"/>
+          <field name="worktime"/>
+          <field name="ot"/>
+          <field name="leavedays"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="salary_action_window">
+      <field name="name">Salary </field>
+      <field name="res_model">hrmanagement.salary</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+        <!-- Top menu item -->
+
+    <menuitem name="Salary" id="salary_menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Employee Details" id="salary_menu_1" parent="salary_menu_root"/>
+    <menuitem name="Salary Details" id="salary_menu_2" parent="salary_menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Salary" id="salary_menu_1_list" parent="salary_menu_1"
+              action="salary_action_window"/>
+    
+    
+
+  </data>
+</odoo>

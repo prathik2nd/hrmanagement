@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hrmanagement_hrmanagement,hrmanagement.hrmanagement,model_hrmanagement_hrmanagement,base.group_user,1,1,1,1
+access_hrmanagement_salary,hrmanagement.salary,model_hrmanagement_salary,base.group_user,1,1,1,1

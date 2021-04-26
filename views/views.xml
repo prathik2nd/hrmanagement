@@ -1,0 +1,45 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="hrmanagement.list">
+      <field name="name">HR Management list</field>
+      <field name="model">hrmanagement.hrmanagement</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="address"/>
+          <field name="email"/>
+          <field name="phone"/>
+          <field name="quali"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="hrmanagement.action_window">
+      <field name="name">HR Management </field>
+      <field name="res_model">hrmanagement.hrmanagement</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+        <!-- Top menu item -->
+
+    <menuitem name="HR Management" id="hrmanagement.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Employee Details" id="hrmanagement.menu_1" parent="hrmanagement.menu_root"/>
+    <menuitem name="Salary Details" id="hrmanagement.menu_2" parent="hrmanagement.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="HR Management" id="hrmanagement.menu_1_list" parent="hrmanagement.menu_1"
+              action="hrmanagement.action_window"/>
+    
+
+  </data>
+</odoo>
