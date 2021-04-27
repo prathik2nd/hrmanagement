@@ -2,7 +2,7 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="hrmanagement.list">
+    <record model="ir.ui.view" id="hrmanagement_list">
       <field name="name">HR Management list</field>
       <field name="model">hrmanagement.hrmanagement</field>
       <field name="arch" type="xml">
@@ -19,26 +19,63 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="hrmanagement.action_window">
+    <record model="ir.actions.act_window" id="hrmanagement_action_window">
       <field name="name">HR Management </field>
       <field name="res_model">hrmanagement.hrmanagement</field>
       <field name="view_mode">tree,form</field>
     </record>
 
+     <!-- Salary  item -->
+    
+    <record model="ir.ui.view" id="salary_list">
+      <field name="name">Salary list</field>
+      <field name="model">hrmanagement.salary</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="bsal"/>
+          <field name="worktime"/>
+          <field name="ot"/>
+          <field name="leavedays"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="salary_action_window">
+      <field name="name">Salary </field>
+      <field name="res_model">hrmanagement.salary</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
 
         <!-- Top menu item -->
 
-    <menuitem name="HR Management" id="hrmanagement.menu_root"/>
+    <menuitem name="HR Management" id="hrmanagement_menu_root"/>
 
     <!-- menu categories -->
 
-    <menuitem name="Employee Details" id="hrmanagement.menu_1" parent="hrmanagement.menu_root"/>
-    <menuitem name="Salary Details" id="hrmanagement.menu_2" parent="hrmanagement.menu_root"/>
+    <menuitem name="Employee Details" id="hrmanagement_menu_1" parent="hrmanagement_menu_root"/>
+   
+    <!-- actions -->
+
+    <menuitem name="Employee Master" id="hrmanagement.menu_1_list" parent="hrmanagement_menu_1"
+              action="hrmanagement_action_window"/>
+    <menuitem name="Salary Details" id="salary_menu_1_list" parent="hrmanagement_menu_1"
+              action="salary_action_window"/>
+
+    
+       
+
+     
 
     <!-- actions -->
 
-    <menuitem name="HR Management" id="hrmanagement.menu_1_list" parent="hrmanagement.menu_1"
-              action="hrmanagement.action_window"/>
+    
+    
     
 
   </data>
